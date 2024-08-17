@@ -1,6 +1,6 @@
-#Stock Sentiment Analysis using Machine Learning
+# Stock Sentiment Analysis using Machine Learning
 
-I. OVERVIEW
+## I. OVERVIEW
 
 The stock market is a nonlinear and dynamic system and the investor sentiment plays an important role in 
 it. Researchers have demonstrated that the investor sentiment can drive the stock market. Robert J. 
@@ -10,19 +10,19 @@ tool that can be deployed to capture this sentiment. It involves extracting view
 analyzing textual data. Based on the extracted information, the bullish or bearish trend of the stock 
 market can be predicted. This information helps us to decide whether to sell or buy stocks. 
 
-II. FLOW OF THE PROJECT
+## II. FLOW OF THE PROJECT
 
 The machine learning models are trained on the dataset prepared for the period 2012-2021 and the final 
 portfolio is calculated using the prepared dataset for the period 2022-2023. 
-1. Scrape training data: 
+### 1. Scrape training data:
 ● Top 10 news headlines of each day for the period 2012-2021 is scraped from the website 
-https://takemeback.to/ and CNN using BeautifulSoup. 
+https://takemeback.to/ and CNN using BeautifulSoup.
 ● The news from both the sources are combined to ensure minimum null values in the 
-dataset. 
+dataset.
 ● Financial news articles and reports are also scraped for each day of the same period 
 from New York Times using Selenium. 
 ● Python’s datetime module is used to iterate over each day from the period 2012-2021. 
-2. Sentiment Analysis and Feature Extraction: 
+### 2. Sentiment Analysis and Feature Extraction: 
 ● The dataset scraped is cleaned by removing punctuation marks and sentiment scores 
 like positive score, neutral score and negative score are calculated by feeding the 
 cleaned data to HuggingFace RoBERTa model.The model is run on GPU to reduce 
@@ -40,7 +40,7 @@ where S stands for sentiment score.
 
 ● Lagged features are created for sentiment scores for past 7 days. 
 ● Moving averages are calculated for sentiment scores with a rolling window of 7 days. 
-3. Training the Model: 
+### 3. Training the Model: 
 ● Historical data is taken from Yahoo Finance for Amazon for the period 2012-2021. 
 ● Labels are created for each based on the following criteria: 
 Label -
@@ -58,14 +58,14 @@ machine learning models and the target variable is Label.
 ● Classification models including Logistic Regression, Decision Tree Classifier, Random 
 Forest Classifier, XGBoost Classifier, Support Vector Classifier and Linear Discriminant 
 Analysis are used for training. 
-4. Model Evaluation: 
+### 4. Model Evaluation: 
 ● All the models used are evaluated based on the following metrics: 
-○ Accuracy 
-○ Precision 
-○ Recall 
-○ F1-Score 
-○ ROC Curve Analysis
-5. Calculating Portfolio: 
+    ○ Accuracy 
+    ○ Precision 
+    ○ Recall 
+    ○ F1-Score 
+    ○ ROC Curve Analysis
+### 5. Calculating Portfolio: 
 ● A new dataset is prepared by scraping data for the period 2022-2023. 
 ● The dataset is preprocessed as done for the training data and the selected model is used 
 to predict the target variable. 
@@ -86,7 +86,7 @@ where trough value = minimum value of the portfolio in the trading period
 
 Win Ratio  =  (𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑤𝑖𝑛𝑛𝑖𝑛𝑔 𝑡𝑟𝑎𝑑𝑒𝑠/𝑡𝑜𝑡𝑎𝑙 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑡𝑟𝑎𝑑𝑒𝑠) x 100 
 
-III. IMPLEMENTATION OF THE TRADING STRATEGY 
+## III. IMPLEMENTATION OF THE TRADING STRATEGY 
 Overnight Trading 
 ● In this project, the type of trading technique adopted is ‘Overnight Trading’. It refers to 
 trades that are placed after an exchange’s close and before its open. It is an extension of 
@@ -110,19 +110,20 @@ generated. Also, we trade aggressively, which implies we either use all cash at 
 buy stocks when a buy signal is generated or sell all shares at once on a sell signal and 
 wait for the next buy signal to reinvest.
 
-IV. Portfolio Analysis 
+## IV. Portfolio Analysis 
 Invested Amount - $30000 
 Stocks in portfolio: 
-● Amazon (AMZN) 
-● Google (GOOGL) 
-● Microsoft (MSFT)
+    ● Amazon (AMZN) 
+    ● Google (GOOGL) 
+    ● Microsoft (MSFT)
 Mean final returns is observed to be 139.57%.
 
-Results: 
+### Results: 
 The mean final return is so high because of the high return rate for Amazon portfolio. This occurred because 
 the ML model was trained on Amazon’s historical data. So if we consider it as an outlier, our final returns for a 
-portfolio range from 40% - 50%. 
-Limitations of the project: 
+portfolio range from 40% - 50%.
+
+### Limitations of the project: 
 ● There are fewer participants in the market after regular trading hours, leading to lower trading 
 volumes. Due to lower trading volumes and liquidity, prices can be more volatile during overnight 
 trading sessions. Even small trades can have a significant impact on the price of a security. 
