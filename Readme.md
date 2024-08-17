@@ -1,6 +1,7 @@
-Stock Sentiment Analysis using Machine Learning
+**Stock Sentiment Analysis using Machine Learning**
 
-I. OVERVIEW 
+I. OVERVIEW
+
 The stock market is a nonlinear and dynamic system and the investor sentiment plays an important role in 
 it. Researchers have demonstrated that the investor sentiment can drive the stock market. Robert J. 
 Shiller found that the behavior of investors led to the 1987 stock market crash, popularly known as Black 
@@ -9,7 +10,8 @@ tool that can be deployed to capture this sentiment. It involves extracting view
 analyzing textual data. Based on the extracted information, the bullish or bearish trend of the stock 
 market can be predicted. This information helps us to decide whether to sell or buy stocks. 
 
-II. FLOW OF THE PROJECT 
+II. FLOW OF THE PROJECT
+
 The machine learning models are trained on the dataset prepared for the period 2012-2021 and the final 
 portfolio is calculated using the prepared dataset for the period 2022-2023. 
 1. Scrape training data: 
