@@ -1,4 +1,4 @@
-**Stock Sentiment Analysis using Machine Learning**
+#Stock Sentiment Analysis using Machine Learning
 
 I. OVERVIEW
 
