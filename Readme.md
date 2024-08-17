@@ -15,13 +15,13 @@ market can be predicted. This information helps us to decide whether to sell or 
 The machine learning models are trained on the dataset prepared for the period 2012-2021 and the final 
 portfolio is calculated using the prepared dataset for the period 2022-2023. 
 ### 1. Scrape training data:
-● Top 10 news headlines of each day for the period 2012-2021 is scraped from the website 
+- Top 10 news headlines of each day for the period 2012-2021 is scraped from the website 
 https://takemeback.to/ and CNN using BeautifulSoup.
-● The news from both the sources are combined to ensure minimum null values in the 
+- The news from both the sources are combined to ensure minimum null values in the 
 dataset.
-● Financial news articles and reports are also scraped for each day of the same period 
+- Financial news articles and reports are also scraped for each day of the same period 
 from New York Times using Selenium. 
-● Python’s datetime module is used to iterate over each day from the period 2012-2021. 
+- Python’s datetime module is used to iterate over each day from the period 2012-2021. 
 ### 2. Sentiment Analysis and Feature Extraction: 
 ● The dataset scraped is cleaned by removing punctuation marks and sentiment scores 
 like positive score, neutral score and negative score are calculated by feeding the 
